@@ -1,0 +1,263 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root {
+    --card-title-border: #338AF3;
+    --card-border-bottom: #338AF3;
+    --card-background-color: #202024;
+    --background-image: url(./assets/background/padrao.webp);
+}
+
+.green {
+    --card-border-bottom: #047C3F;
+    --card-title-border: #047C3F;
+    --card-background-color: #1A1F1B;
+    --background-image: url(./assets/bg-green.svg);
+}
+
+.japao {
+    --card-border-bottom: #ff1100;
+    --card-title-border: #ff1100;
+    --card-background-color: rgb(8 6 18 / 81%) /*#080612cf*/;
+    --background-image: url(./assets/background/japao.webp);
+    background-position-y: 0px;
+}
+
+.china {
+    --card-border-bottom: #fff100;
+    --card-title-border: #fff100;
+    --card-background-color: rgb(52 16 4) /*#080612cf*/;
+    --background-image: url(./assets/background/china4.jpg);
+    background-position-y: 0px;
+}
+
+body {
+    background: #121214 var(--background-image) no-repeat center -250px / cover fixed;
+    height: 100vh;
+}
+
+dialog {
+    background-color: #121214;
+    position: fixed;
+    z-index: 2;
+
+    width: 350px;
+    min-height: 100%;
+
+    padding: 0px 50px;
+    border: none;
+    top: 0px;
+}
+
+dialog #added-games {
+    display: flex;
+    flex-flow: column;
+
+    margin-top: 50px;
+    color: #fff;
+}
+
+dialog #close-dialog {
+    width: 35px;
+
+    filter: invert(100%) sepia(0%) saturate(14%) hue-rotate(337deg) brightness(105%) contrast(107%);
+
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    cursor: pointer;
+}
+
+dialog #close-dialog:hover {
+    filter: invert(58%) sepia(83%) saturate(4477%) hue-rotate(195deg) brightness(100%) contrast(91%);
+
+    border: 1px dashed #338AF3;
+}
+
+dialog #added-games input {
+    background-color: #3B3B3B;
+    color: #ddd;
+    
+    padding: 15px 10px;
+    border-radius: 6px;
+
+    font-size: 14px;
+    margin: 5px 0px 20px;
+    border: none;
+}
+
+dialog div input::placeholder {
+    color: #ddd;
+}
+
+dialog #added-games button {
+    background-color: #6B6B6B;
+    color: #eeeeee;
+    border: none;
+    border-radius: 6px;
+
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    padding: 15px;
+}
+
+dialog #added-games button:hover {
+    background-color: #338AF3;
+    color: #FFFFFF;
+}
+
+
+div#app {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+header {
+    margin: 30px 0px 20px 0px;
+}
+
+ul#option {
+    display: flex;
+    gap: 30px;
+
+    padding: 5px 20px;
+    background-color: var(--card-background-color);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+img.button {
+    width: 40px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(227deg) brightness(105%) contrast(101%);
+
+    cursor: pointer;
+}
+
+img.button:hover {
+    filter: invert(58%) sepia(83%) saturate(4477%) hue-rotate(195deg) brightness(100%) contrast(91%);
+
+    border: 1px dashed #338AF3;
+}
+
+div#app main#cards {
+    max-width: fit-content;
+}
+
+.card {
+    padding: 32px 15px;
+    text-align: center;
+
+    background-color: var(--card-background-color);
+    border-bottom: 2px solid var(--card-border-bottom);
+    border-radius: 6px;
+    margin-bottom: 52px;
+
+    width: fit-content;
+    height: fit-content;
+
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+
+    padding: 8px 16px;
+    border: 1px solid var(--card-title-border);
+    border-radius: 6px;
+
+    width: fit-content;
+    margin: 0px auto 20px auto;
+
+    color: #F7DD43;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.card h2 span {
+    color: #E1E1E6;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.stage {
+    font-size: 18px;
+    color: #fff;
+}
+
+
+.card ul {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    width: fit-content;
+    margin-top: 20px;
+}
+
+.card ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card ul li + li {
+    border-top: 1px solid #323238;
+    padding-top: 24px;
+}
+
+.card ul li strong {
+    font-size: 36px;
+    font-weight: 900;
+
+    color: #E1E1E6;
+}
+
+.card ul li div{
+    width: 100px;
+    color: #fff;
+}
+
+.card ul li .bandeira:hover {
+    transform: rotate(360deg);
+    transition: transform .5s linear;
+    
+    cursor: pointer;
+}
+
+span.name-country {
+    display: block;
+    margin-top: 8px;
+
+    text-transform: capitalize;
+    font-size: 14px;
+}
+
+span.stage-group {
+    text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+    main#cards {
+        display: flex;
+        flex-flow: wrap;
+        gap: 32px;
+    }
+
+    .japao {
+        background-position-y: -117px;
+        /*#080612cf*/
+    }
+}

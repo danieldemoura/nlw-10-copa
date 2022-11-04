@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário de Jogos - NLW Copa</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700;900&display=swap" rel="stylesheet">
+    
+    <link rel="icon" href="./assets/favicon.png">
+    <link rel="stylesheet" href="estyle.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <img src="./assets/logo.svg" alt="Logo da NLW">
+        </header>
+        <section>
+            <ul id="option">
+                <li>
+                    <img id="view-grid" class="button" src="./assets/view_module.svg" alt="Visualizar em Grade">
+                </li>
+                <li>
+                    <img id="view-list" class="button" src="./assets/view_list.svg" alt="Visualizar em Lista">
+                </li>
+                <li>
+                    <img class="open-dialog button" src="./assets/add_box.svg" alt="Adicionar País">
+                </li>
+            </ul>
+        </section>
+        <main id="cards"></main>
+    </div>
+
+    <dialog >
+        <div id="added-games">
+            <img id="close-dialog" src="./assets/close.svg" alt="Fechar Janela">
+        
+            <label for="time1">Nome do 1º País</label>
+            <input id="time1" type="text" placeholder="Digite o nome do País" required>
+            <label for="time2">Nome do 2º País</label>
+            <input id="time2" type="text" placeholder="Digite o nome do País" required>
+
+            <label for="group">Nome do Grupo</label>
+            <input id="group" type="text" placeholder="Digite o nome do Grupo" required>
+
+            <label for="hour">Horário da Partida</label>
+            <input id="hour" type="time" required>
+
+            <button id="button" onclick="addedTime()">Adicionar Jogos</button>
+        </div>
+    </dialog>
+    <script src="./main.js"></script>
+</body>
+</html>
