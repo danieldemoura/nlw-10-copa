@@ -25,7 +25,6 @@
     --card-title-border: #ff1100;
     --card-background-color: rgb(8 6 18 / 81%) /*#080612cf*/;
     --background-image: url(./assets/background/japao.webp);
-    background-position-y: 0px;
 }
 
 .china {
@@ -33,11 +32,10 @@
     --card-title-border: #fff100;
     --card-background-color: rgb(52 16 4) /*#080612cf*/;
     --background-image: url(./assets/background/china4.jpg);
-    background-position-y: 0px;
 }
 
 body {
-    background: #121214 var(--background-image) no-repeat center -250px / cover fixed;
+    background: #121214 var(--background-image) no-repeat center bottom / cover fixed;
     height: 100vh;
 }
 
@@ -254,10 +252,5 @@ span.stage-group {
         display: flex;
         flex-flow: wrap;
         gap: 32px;
-    }
-
-    .japao {
-        background-position-y: -117px;
-        /*#080612cf*/
     }
 }
