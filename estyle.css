@@ -147,8 +147,11 @@ img.button:hover {
     border: 1px dashed #338AF3;
 }
 
-div#app main#cards {
-    max-width: fit-content;
+main#cards {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    gap: 32px;
 }
 
 .card {
@@ -191,8 +194,17 @@ div#app main#cards {
 }
 
 .stage {
+    display: block;
     font-size: 18px;
     color: #fff;
+}
+
+#jogador {
+    display: none;
+    width: 160px;
+    height: 260px;
+    margin-top: 5px;
+    object-fit: contain;
 }
 
 
@@ -245,12 +257,4 @@ span.name-country {
 
 span.stage-group {
     text-transform: uppercase;
-}
-
-@media screen and (min-width: 768px) {
-    main#cards {
-        display: flex;
-        flex-flow: wrap;
-        gap: 32px;
-    }
 }

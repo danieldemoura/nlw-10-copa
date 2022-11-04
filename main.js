@@ -22,7 +22,7 @@ function creatGame(play1, hour, play2, group) {
 
     <li>
         <div>
-            <img class="bandeira" src="./assets/icon-${play1}.svg" alt="${play1}">
+            <img class="bandeira" src="./assets/icon-${play1}.svg" alt="${play1}" onmouseout="ocultarJogador()">
             <span class="name-country">${play1}</span>
         </div>
         <div>
@@ -30,7 +30,7 @@ function creatGame(play1, hour, play2, group) {
             <span class="stage-group">${group}</span>
         </div>
         <div>
-            <img class="bandeira" src="./assets/icon-${play2}.svg" alt="${play2}">
+            <img class="bandeira" src="./assets/icon-${play2}.svg" alt="${play2}" onmouseout="ocultarJogador()">
             <span class="name-country">${play2.replace("suica","suiça")}</span>
         </div>
     </li>   
@@ -45,6 +45,7 @@ function creatCard(date, day, stage, games) {
         <div>
             <h2>${date} <span>${day}</span></h2>
             <span class="stage">${stage}</span>
+            <img id="jogador" alt="">
         </div>
         <ul>             
             ${games}  
@@ -54,16 +55,6 @@ function creatCard(date, day, stage, games) {
     `
 }
 
-function addedTime() {
-    let time1 = inputTime1.value.toLowerCase()
-    let time2 = inputTime2.value.toLowerCase()
-    let hour = inputHour.value
-    let group = inputGroup.value.toLowerCase()
-
-    console.log(time1 + " " + hour + " " + time2)
-
-    document.querySelector(".card:nth-child(2) ul").innerHTML += creatGame(time1, hour, time2, group)
-}
 
 document.querySelector("#cards").innerHTML = 
     creatCard("24/11", "Quinta", "FASE 5",
@@ -80,23 +71,42 @@ document.querySelector("#cards").innerHTML =
     creatGame("portugal", "23:00", "uruguai", "GRUPO H")
     )
 
+
+function addedTime() {
+    let time1 = inputTime1.value.toLowerCase()
+    let time2 = inputTime2.value.toLowerCase()
+    let hour = inputHour.value
+    let group = inputGroup.value.toLowerCase()
+
+    document.querySelector(".card:nth-child(2) ul").innerHTML += creatGame(time1, hour, time2, group)
+}
+
+
+
 const body = document.querySelector("body")
 
 const imgBandeiraJapao = document.querySelectorAll("img[alt=japao]")
+const imgBandeiraChina = document.querySelectorAll("img[alt=china]")
+const imgBandeiraBrasil = document.querySelectorAll("img[alt=brasil]")
+const imgBandeiraUruguai = document.querySelectorAll("img[alt=uruguai]")
+const imgBandeiraPortugal = document.querySelectorAll("img[alt=portugal]")
+const imgBandeiraCoreiaDoSul = document.querySelectorAll("img[alt=coreia-do-sul]")
+const imgBandeiraGana = document.querySelectorAll("img[alt=gana]")
+const imgBandeiraSerbia = document.querySelectorAll("img[alt=serbia]")
+
 imgBandeiraJapao.forEach((imgBandeiraJapao) =>  
     imgBandeiraJapao.addEventListener("click", function() {
         body.classList.remove("green", "china")
         body.classList.add("japao")
+        console.log("japao")
     })
 )
-const imgBandeiraChina = document.querySelectorAll("img[alt=china]")
 imgBandeiraChina.forEach((imgBandeiraChina) =>  
     imgBandeiraChina.addEventListener("click", function() {
         body.classList.remove("green", "japao")
         body.classList.add("china")
     })
 )
-const imgBandeiraBrasil = document.querySelectorAll("img[alt=brasil]")
 imgBandeiraBrasil.forEach((imgBandeiraBrasil) =>
     imgBandeiraBrasil.addEventListener("click", function() {
         body.classList.remove("japao", "china")
@@ -104,22 +114,77 @@ imgBandeiraBrasil.forEach((imgBandeiraBrasil) =>
     })
 )
 
-/* Preciso arrumar */
-const mainCard = document.querySelector("main#cards")   
-const divCard = document.querySelector("div.card")
 
+/* efetito de mostrar jogador ao passar o mouse em cima da bandeira do país */
+const imgJogador = document.querySelector("#jogador")
+imgBandeiraBrasil.forEach((imgBandeiraBrasil) =>
+    imgBandeiraBrasil.addEventListener("mouseover", function() {
+        imgJogador.style.display = "block"
+        imgJogador.setAttribute("src", "./assets/jogador/brasil-neymar3.png")
+    })
+)
+
+imgBandeiraUruguai.forEach((imgBandeiraUruguai) =>
+    imgBandeiraUruguai.addEventListener("mouseover", function() {
+        imgJogador.style.display = "block"
+        imgJogador.setAttribute("src", "./assets/jogador/uruguai-luis-suarez.png")
+    })
+)
+
+imgBandeiraCoreiaDoSul.forEach((imgBandeiraCoreiaDoSul) =>
+    imgBandeiraCoreiaDoSul.addEventListener("mouseover", function() {
+        imgJogador.style.display = "block"
+        imgJogador.setAttribute("src", "./assets/jogador/coreia-do-sul-son-heung-min.png")
+    })
+)
+
+imgBandeiraPortugal.forEach((imgBandeiraPortugal) =>
+    imgBandeiraPortugal.addEventListener("mouseover", function() {
+        imgJogador.style.display = "block"
+        imgJogador.setAttribute("src", "./assets/jogador/portugal-cristiano-ronaldo3.png")
+    })
+)
+
+imgBandeiraGana.forEach((imgBandeiraGana) =>
+    imgBandeiraGana.addEventListener("mouseover", function() {
+        imgJogador.style.display = "block"
+        imgJogador.setAttribute("src", "./assets/jogador/gana-christian-atsu.png")
+    })
+)
+
+imgBandeiraSerbia.forEach((imgBandeiraSerbia) =>
+    imgBandeiraSerbia.addEventListener("mouseover", function() {
+        imgJogador.style.display = "block"
+        imgJogador.setAttribute("src", "./assets/jogador/serbia-aleksandar-kolarov.png")
+    })
+)
+
+
+
+
+// function ocultarJogador() {
+//     imgJogador.setAttribute("src", "")
+// }
+
+
+const mainCard = document.querySelector("main#cards")   
+const divCard = document.querySelectorAll("div.card")
 const imgButtonViewList = document.querySelector("#view-list")
 const imgButtonViewGrid = document.querySelector("#view-grid")
 
-
-imgButtonViewList.onclick = function() {
-    divCard.style.display = "flex"
-    mainCard.style.flexFlow = "column"
-}
-imgButtonViewGrid.onclick = function() {
-    divCard.style.display = "block"
-    mainCard.style.flexFlow = "row"
-}
+imgButtonViewList.addEventListener("click", () =>
+    divCard.forEach((divCard) => 
+        divCard.style.display = "flex",
+        mainCard.style.flexFlow = "column"
+    )
+)
+imgButtonViewGrid.addEventListener("click",  () =>
+    divCard.forEach((divCard) => 
+        divCard.style.display = "block",
+        mainCard.style.flexFlow = "row",
+        imgJogador.style.display = "none"
+    )
+)
 
 
 const openDialog = document.querySelector(".open-dialog")
