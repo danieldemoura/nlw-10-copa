@@ -52,6 +52,31 @@
     --background-image: url(./assets/background/china.jpg);
 }
 
+.coreia-do-sul {
+    --card-border-bottom: #961822;
+    --card-title-border: #961822;
+    --card-ul-li-border: #961822;
+    --card-background-color: #0f1314;
+    --background-image: url(./assets/background/pexels-clive-kim.webp);
+}
+
+.uruguai {
+    --card-border-bottom: #fae17a;
+    --card-title-border: #fae17a;
+    --card-ul-li-border: #fae07a9f;
+    --card-background-color: #2a1521;
+    --background-image: url(./assets/background/pexels-kien-virak.webp);
+}
+
+.gana {
+    --card-border-bottom: #ffda44;
+    --card-title-border: #ffda44;
+    --card-ul-li-border: #ffda4487;
+    --card-background-color: #261a1a;
+    --background-image: url(./assets/background/michael-behrens.webp);
+}
+
+
 body {
     background: #121214 var(--background-image) no-repeat center bottom / cover fixed;
     height: 100vh;
@@ -217,7 +242,7 @@ main#cards {
     color: #fff;
 }
 
-#jogador {
+.jogador {
     display: none;
     width: 160px;
     height: 260px;
