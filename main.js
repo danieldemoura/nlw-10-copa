@@ -21,18 +21,18 @@ function creatGame(play1, hour, play2, group) {
     return `
 
     <li>
-        <div>
+        <figure>
             <img class="bandeira" src="./assets/icon-${play1}.svg" alt="${play1}" onmouseout="ocultarJogador()">
-            <span class="name-country">${play1}</span>
-        </div>
-        <div>
+            <figcaption class="name-country">${play1}</figcaption>
+        </figure>
+        <figure>
             <strong class="hour">${hour}</strong>
-            <span class="stage-group">${group}</span>
-        </div>
-        <div>
+            <strong class="stage-group">${group}</strong>
+        </figure>
+        <figure>
             <img class="bandeira" src="./assets/icon-${play2}.svg" alt="${play2}" onmouseout="ocultarJogador()">
-            <span class="name-country">${play2.replace("suica","suiça")}</span>
-        </div>
+            <figcaption class="name-country">${play2.replace("suica","suiça")}</figcaption>
+        </figure>
     </li>   
 
     `
@@ -96,65 +96,79 @@ const imgBandeiraSerbia = document.querySelectorAll("img[alt=serbia]")
 
 imgBandeiraJapao.forEach((imgBandeiraJapao) =>  
     imgBandeiraJapao.addEventListener("click", function() {
-        body.classList.remove("green", "china")
+        body.classList.remove("green", "china", "portugal", "serbia")
         body.classList.add("japao")
         console.log("japao")
     })
 )
 imgBandeiraChina.forEach((imgBandeiraChina) =>  
     imgBandeiraChina.addEventListener("click", function() {
-        body.classList.remove("green", "japao")
+        body.classList.remove("green", "japao", "portugal", "serbia")
         body.classList.add("china")
     })
 )
 imgBandeiraBrasil.forEach((imgBandeiraBrasil) =>
     imgBandeiraBrasil.addEventListener("click", function() {
-        body.classList.remove("japao", "china")
+        body.classList.remove("japao", "china", "portugal", "serbia")
         body.classList.add("green") 
     })
 )
+imgBandeiraPortugal.forEach((imgBandeiraPortugal) =>
+    imgBandeiraPortugal.addEventListener("click", function() {
+        body.classList.remove("japao", "china", "green", "serbia")
+        body.classList.add("portugal") 
+    })
+)
+
+imgBandeiraSerbia.forEach((imgBandeiraSerbia) =>
+    imgBandeiraSerbia.addEventListener("click", function() {
+        body.classList.remove("japao", "china", "green", "portugal")
+        body.classList.add("serbia") 
+    })
+)
+
 
 
 /* efetito de mostrar jogador ao passar o mouse em cima da bandeira do país */
 const imgJogador = document.querySelector("#jogador")
 imgBandeiraBrasil.forEach((imgBandeiraBrasil) =>
     imgBandeiraBrasil.addEventListener("mouseover", function() {
-        imgJogador.style.display = "block"
-        imgJogador.setAttribute("src", "./assets/jogador/brasil-neymar3.png")
+        imgJogador.style.display = "inline-block"
+        imgJogador.setAttribute("src", "./assets/jogador/brasil-neymar.png")
     })
 )
 
 imgBandeiraUruguai.forEach((imgBandeiraUruguai) =>
     imgBandeiraUruguai.addEventListener("mouseover", function() {
-        imgJogador.style.display = "block"
+        imgJogador.style.display = "inline-block"
         imgJogador.setAttribute("src", "./assets/jogador/uruguai-luis-suarez.png")
     })
 )
 
 imgBandeiraCoreiaDoSul.forEach((imgBandeiraCoreiaDoSul) =>
     imgBandeiraCoreiaDoSul.addEventListener("mouseover", function() {
-        imgJogador.style.display = "block"
+        imgJogador.style.display = "inline-block"
         imgJogador.setAttribute("src", "./assets/jogador/coreia-do-sul-son-heung-min.png")
     })
 )
 
 imgBandeiraPortugal.forEach((imgBandeiraPortugal) =>
     imgBandeiraPortugal.addEventListener("mouseover", function() {
-        imgJogador.style.display = "block"
-        imgJogador.setAttribute("src", "./assets/jogador/portugal-cristiano-ronaldo3.png")
+        imgJogador.style.display = "inline-block"
+        imgJogador.setAttribute("src", "./assets/jogador/portugal-cristiano-ronaldo.png")
     })
 )
 
 imgBandeiraGana.forEach((imgBandeiraGana) =>
     imgBandeiraGana.addEventListener("mouseover", function() {
-        imgJogador.style.display = "block"
+        imgJogador.style.display = "inline-block"
         imgJogador.setAttribute("src", "./assets/jogador/gana-christian-atsu.png")
     })
 )
 
 imgBandeiraSerbia.forEach((imgBandeiraSerbia) =>
     imgBandeiraSerbia.addEventListener("mouseover", function() {
-        imgJogador.style.display = "block"
+        imgJogador.style.display = "inline-block"
         imgJogador.setAttribute("src", "./assets/jogador/serbia-aleksandar-kolarov.png")
     })
 )

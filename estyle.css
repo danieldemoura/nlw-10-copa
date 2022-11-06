@@ -10,6 +10,7 @@
     --card-title-border: #338AF3;
     --card-border-bottom: #338AF3;
     --card-background-color: #202024;
+    --card-ul-li-border: #323238;
     --background-image: url(./assets/background/padrao.webp);
 }
 
@@ -23,6 +24,7 @@
 .japao {
     --card-border-bottom: #ff1100;
     --card-title-border: #ff1100;
+    --card-ul-li-border: #f911016e;
     --card-background-color: rgb(8 6 18 / 81%) /*#080612cf*/;
     --background-image: url(./assets/background/japao.webp);
 }
@@ -32,6 +34,22 @@
     --card-title-border: #fff100;
     --card-background-color: rgb(52 16 4) /*#080612cf*/;
     --background-image: url(./assets/background/china4.jpg);
+}
+
+.portugal {
+    --card-border-bottom: #fff;
+    --card-title-border: #fff;
+    --card-ul-li-border: #ffffff80;
+    --card-background-color: #285ca6cc;
+    --background-image: url(./assets/background/champions-league.webp);
+}
+
+.serbia {
+    --card-border-bottom: #0079ff;
+    --card-title-border: #0079ff;
+    --card-ul-li-border: #0079ff75;
+    --card-background-color: #0b071cde;
+    --background-image: url(./assets/background/china.jpg);
 }
 
 body {
@@ -224,7 +242,7 @@ main#cards {
 }
 
 .card ul li + li {
-    border-top: 1px solid #323238;
+    border-top: 1px solid var(--card-ul-li-border);
     padding-top: 24px;
 }
 
@@ -235,19 +253,19 @@ main#cards {
     color: #E1E1E6;
 }
 
-.card ul li div{
+.card ul li figure{
     width: 100px;
     color: #fff;
 }
 
-.card ul li .bandeira:hover {
+.card ul li figure .bandeira:hover {
     transform: rotate(360deg);
     transition: transform .5s linear;
     
     cursor: pointer;
 }
 
-span.name-country {
+figcaption.name-country {
     display: block;
     margin-top: 8px;
 
@@ -255,6 +273,18 @@ span.name-country {
     font-size: 14px;
 }
 
-span.stage-group {
+.card ul li strong.stage-group {
     text-transform: uppercase;
+    font-size: 18px;
+}
+
+@media screen and (max-width: 700px) {
+    #view-list, #view-grid {
+        display: none;
+        width: 0px;
+    }
+
+    ul#option {
+        gap: 0px;
+    }
 }
