@@ -104,52 +104,37 @@ function addedStyleFlagOfCountry(elementHtml, country) {
     elementHtml.classList.add(styleFlagOfCountries[index])
 }
 
+function modifiedStyleFlagOfCountry(country) {
+    removeStyleFlagOfCountry(body)
+    addedStyleFlagOfCountry(body, country)
+}
+
 imgBandeiraJapao.forEach((imgBandeiraJapao) =>  
-    imgBandeiraJapao.addEventListener("click", function() {
-        removeStyleFlagOfCountry(body)
-        addedStyleFlagOfCountry(body, "japao")
-    })
+    imgBandeiraJapao.addEventListener("click", function() { modifiedStyleFlagOfCountry("japao") })
 )
 
 imgBandeiraBrasil.forEach((imgBandeiraBrasil) =>
-    imgBandeiraBrasil.addEventListener("click", function() {
-        removeStyleFlagOfCountry(body)
-        addedStyleFlagOfCountry(body, "brasil")
-    })
+    imgBandeiraBrasil.addEventListener("click", function() { modifiedStyleFlagOfCountry("brasil") })
 )
+
 imgBandeiraPortugal.forEach((imgBandeiraPortugal) =>
-    imgBandeiraPortugal.addEventListener("click", function() {
-        removeStyleFlagOfCountry(body)
-        addedStyleFlagOfCountry(body, "portugal")
-    })
+    imgBandeiraPortugal.addEventListener("click", function() { modifiedStyleFlagOfCountry("portugal") })
 )
 
 imgBandeiraSerbia.forEach((imgBandeiraSerbia) =>
-    imgBandeiraSerbia.addEventListener("click", function() {
-        removeStyleFlagOfCountry(body)
-        addedStyleFlagOfCountry(body, "serbia")
-    })
+    imgBandeiraSerbia.addEventListener("click", function() { modifiedStyleFlagOfCountry("serbia") })
 )
 
 imgBandeiraCoreiaDoSul.forEach((imgBandeiraCoreiaDoSul) =>
-    imgBandeiraCoreiaDoSul.addEventListener("click", function() {
-        removeStyleFlagOfCountry(body)
-        addedStyleFlagOfCountry(body, "coreia-do-sul")
-    })
+    imgBandeiraCoreiaDoSul.addEventListener("click", function() { modifiedStyleFlagOfCountry("coreia-do-sul") })
 )
 
 imgBandeiraUruguai.forEach((imgBandeiraUruguai) =>
-    imgBandeiraUruguai.addEventListener("click", function() {
-        removeStyleFlagOfCountry(body)
-        addedStyleFlagOfCountry(body, "uruguai")
-    })
+    imgBandeiraUruguai.addEventListener("click", function() { modifiedStyleFlagOfCountry("uruguai") })
 )
 
 imgBandeiraGana.forEach((imgBandeiraGana) =>
-    imgBandeiraGana.addEventListener("click", function() {
-        removeStyleFlagOfCountry(body)
-        addedStyleFlagOfCountry(body, "gana")
-    })
+    imgBandeiraGana.addEventListener("click", function() { modifiedStyleFlagOfCountry("gana") })
 )
 
 
