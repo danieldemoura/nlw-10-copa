@@ -191,78 +191,96 @@ function mostrarJogador(country, elementImgJogador) {
     }
 }
 
-divCardNumber1.addEventListener("mouseover", function() {
-
-    imgBandeiraUruguai.forEach((imgBandeiraUruguai) =>
-        imgBandeiraUruguai.addEventListener("mouseover", function() {
-            mostrarJogador("Uruguai", imageJogadorCardNumber1)
+function flagCountryMouseEnter(element, country, cardNumber) {
+        element.forEach((element) =>
+        element.addEventListener("mouseenter", function() {
+            mostrarJogador(country, cardNumber)
         })
-    )
+    )    
 
-    imgBandeiraCoreiaDoSul.forEach((imgBandeiraCoreiaDoSul) =>
-        imgBandeiraCoreiaDoSul.addEventListener("mouseover", function() {
-            mostrarJogador("Coreia do Sul", imageJogadorCardNumber1)
-        })
-    )
+}
 
-    imgBandeiraPortugal.forEach((imgBandeiraPortugal) =>
-        imgBandeiraPortugal.addEventListener("mouseover", function() {
-            mostrarJogador("Portugal", imageJogadorCardNumber1)
-        })
-    )
+divCardNumber1.addEventListener("mouseenter", function() {
+    flagCountryMouseEnter(imgBandeiraUruguai, "Uruguai", imageJogadorCardNumber1)
+    flagCountryMouseEnter(imgBandeiraCoreiaDoSul, "Coreia do Sul", imageJogadorCardNumber1)
+    flagCountryMouseEnter(imgBandeiraPortugal, "Portugal", imageJogadorCardNumber1)
+    flagCountryMouseEnter(imgBandeiraGana, "Gana", imageJogadorCardNumber1)
+    flagCountryMouseEnter(imgBandeiraBrasil, "Brasil", imageJogadorCardNumber1)
+    flagCountryMouseEnter(imgBandeiraSerbia, "Serbia", imageJogadorCardNumber1)
 
-    imgBandeiraGana.forEach((imgBandeiraGana) =>
-        imgBandeiraGana.addEventListener("mouseover", function() {
-            mostrarJogador("Gana", imageJogadorCardNumber1)
-        })
-    )
+    // imgBandeiraUruguai.forEach((imgBandeiraUruguai) =>
+    //     imgBandeiraUruguai.addEventListener("mouseenter", function() {
+    //         mostrarJogador("Uruguai", imageJogadorCardNumber1)
+    //     })
+    // )
 
-    imgBandeiraBrasil.forEach((imgBandeiraBrasil) =>
-        imgBandeiraBrasil.addEventListener("mouseover", function() {
-            mostrarJogador("Brasil", imageJogadorCardNumber1)
-        }) 
-    )
+    // imgBandeiraCoreiaDoSul.forEach((imgBandeiraCoreiaDoSul) =>
+    //     imgBandeiraCoreiaDoSul.addEventListener("mouseenter", function() {
+    //         mostrarJogador("Coreia do Sul", imageJogadorCardNumber1)
+    //     })
+    // )
 
-    imgBandeiraSerbia.forEach((imgBandeiraSerbia) =>
-        imgBandeiraSerbia.addEventListener("mouseover", function() {
-            mostrarJogador("Serbia", imageJogadorCardNumber1)
-        })
-    )
+    // imgBandeiraPortugal.forEach((imgBandeiraPortugal) =>
+    //     imgBandeiraPortugal.addEventListener("mouseenter", function() {
+    //         mostrarJogador("Portugal", imageJogadorCardNumber1)
+    //     })
+    // )
 
+    // imgBandeiraGana.forEach((imgBandeiraGana) =>
+    //     imgBandeiraGana.addEventListener("mouseenter", function() {
+    //         mostrarJogador("Gana", imageJogadorCardNumber1)
+    //     })
+    // )
+
+    // imgBandeiraBrasil.forEach((imgBandeiraBrasil) =>
+    //     imgBandeiraBrasil.addEventListener("mouseenter", function() {
+    //         mostrarJogador("Brasil", imageJogadorCardNumber1)
+    //     }) 
+    // )
+
+    // imgBandeiraSerbia.forEach((imgBandeiraSerbia) =>
+    //     imgBandeiraSerbia.addEventListener("mouseenter", function() {
+    //         mostrarJogador("Serbia", imageJogadorCardNumber1)
+    //     })
+    // )
 })
 
-divCardNumber3.addEventListener("mouseover", function() {
+divCardNumber3.addEventListener("mouseenter", function() {
+    flagCountryMouseEnter(imgBandeiraCoreiaDoSul, "Coreia do Sul", imageJogadorCardNumber3)
+    flagCountryMouseEnter(imgBandeiraGana, "Gana", imageJogadorCardNumber3)
+    flagCountryMouseEnter(imgBandeiraBrasil, "Brasil", imageJogadorCardNumber3)
+    flagCountryMouseEnter(imgBandeiraPortugal, "Portugal", imageJogadorCardNumber3)
+    flagCountryMouseEnter(imgBandeiraUruguai, "Uruguai", imageJogadorCardNumber3)
 
-    imgBandeiraCoreiaDoSul.forEach((imgBandeiraCoreiaDoSul) =>
-        imgBandeiraCoreiaDoSul.addEventListener("mouseover", function() {
-            mostrarJogador("Coreia do Sul", imageJogadorCardNumber3)
-        })
-    )
+    // imgBandeiraCoreiaDoSul.forEach((imgBandeiraCoreiaDoSul) =>
+    //     imgBandeiraCoreiaDoSul.addEventListener("mouseenter", function() {
+    //         mostrarJogador("Coreia do Sul", imageJogadorCardNumber3)
+    //     })
+    // )
 
-    imgBandeiraGana.forEach((imgBandeiraGana) =>
-        imgBandeiraGana.addEventListener("mouseover", function() {
-            mostrarJogador("Gana", imageJogadorCardNumber3)
-        })
-    )
+    // imgBandeiraGana.forEach((imgBandeiraGana) =>
+    //     imgBandeiraGana.addEventListener("mouseenter", function() {
+    //         mostrarJogador("Gana", imageJogadorCardNumber3)
+    //     })
+    // )
 
-    imgBandeiraBrasil.forEach((imgBandeiraBrasil) =>
-        imgBandeiraBrasil.addEventListener("mouseover", function() {
-            mostrarJogador("Brasil", imageJogadorCardNumber3)
-        }) 
-    )
+    // imgBandeiraBrasil.forEach((imgBandeiraBrasil) =>
+    //     imgBandeiraBrasil.addEventListener("mouseenter", function() {
+    //         mostrarJogador("Brasil", imageJogadorCardNumber3)
+    //     }) 
+    // )
 
-    imgBandeiraPortugal.forEach((imgBandeiraPortugal) =>
-        imgBandeiraPortugal.addEventListener("mouseover", function() {
-            mostrarJogador("Portugal", imageJogadorCardNumber3)
-        })
-    )
+    // imgBandeiraPortugal.forEach((imgBandeiraPortugal) =>
+    //     imgBandeiraPortugal.addEventListener("mouseenter", function() {
+    //         mostrarJogador("Portugal", imageJogadorCardNumber3)
+    //     })
+    // )
 
-    imgBandeiraUruguai.forEach((imgBandeiraUruguai) =>
-        imgBandeiraUruguai.addEventListener("mouseover", function() {
-            mostrarJogador("Uruguai", imageJogadorCardNumber3)
-        })
-    )
-
+    // imgBandeiraUruguai.forEach((imgBandeiraUruguai) =>
+    //     imgBandeiraUruguai.addEventListener("mouseenter", function() {
+    //         mostrarJogador("Uruguai", imageJogadorCardNumber3)
+    //     })
+    // )
 })
 
 // const imageJogadores = document.querySelectorAll(".bandeira")
@@ -281,10 +299,10 @@ const imgJogadorPadrao = document.querySelectorAll(".jogador")
 
 
 function modeloJogadorPadrao(display) {
-    imgJogadorPadrao.forEach((imgJogadorPadrao) => 
-        imgJogadorPadrao.style.display = display,
-        imgJogador.setAttribute("src", "./assets/jogador/padrao.svg")
-    )
+    for(let index = 0; index < imgJogadorPadrao.length; index++) {
+        imgJogadorPadrao[index].style.display = display
+        imgJogadorPadrao[index].setAttribute("src", "./assets/jogador/padrao.svg")
+    }
 }
 
 imgButtonViewList.addEventListener("click", function() {
@@ -299,7 +317,7 @@ imgButtonViewList.addEventListener("click", function() {
 imgButtonViewGrid.addEventListener("click", function() {
         divCard.forEach((divCard) => 
             divCard.style.display = "block",
-            mainCard.style.flexFlow = "row",
+            mainCard.style.flexFlow = "row wrap",
             modeloJogadorPadrao("none"),
         )
     }
